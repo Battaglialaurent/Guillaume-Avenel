@@ -134,6 +134,15 @@ footer p{opacity:.75}
 .dock .btn{flex:1;max-width:220px;min-height:46px}
 @media (prefers-reduced-transparency:reduce){.dock{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}}
 
+/* Menu e-mail (ordinateur) */
+.mailmenu{margin:auto;width:min(92vw,400px);border:1px solid var(--line);border-radius:26px;padding:26px 22px 20px;background:var(--surface);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.mailmenu::backdrop{background:rgba(20,30,26,.5)}
+.mailmenu h3{font-size:1.4rem;font-weight:600}
+.mailmenu .mm-addr{margin:4px 0 18px;color:var(--muted);overflow-wrap:anywhere;font-size:.95rem}
+.mm-list{display:grid;gap:8px}
+.mm-list .btn{width:100%}
+.mm-x{display:block;margin:14px auto 0;background:none;border:0;font:600 .92rem var(--sans);color:var(--muted);cursor:pointer;padding:8px 14px}
+
 /* Toast */
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:50;max-width:calc(100vw - 32px);padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:.92rem;font-weight:600;opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:opacity 180ms ease-out,transform 180ms ease-out}
 .toast.on{opacity:1;transform:translate(-50%,0)}
@@ -250,6 +259,17 @@ footer p{opacity:.75}
   <a class="btn primary" id="d-tel" href="#" hidden>Appeler</a>
   <a class="btn" id="d-mail" href="#" hidden>Écrire</a>
 </div>
+<dialog class="mailmenu" id="mailmenu" aria-label="Écrire un e-mail">
+  <h3>Écrire à Guillaume</h3>
+  <p class="mm-addr" id="mm-addr"></p>
+  <div class="mm-list">
+    <a class="btn primary" id="mm-gmail" href="#" target="_blank" rel="noopener">Ouvrir Gmail</a>
+    <a class="btn" id="mm-outlook" href="#" target="_blank" rel="noopener">Ouvrir Outlook</a>
+    <a class="btn" id="mm-app" href="#">Application de messagerie</a>
+    <button class="btn" id="mm-copy" type="button">Copier l’adresse</button>
+  </div>
+  <button class="mm-x" type="button">Fermer</button>
+</dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -323,6 +343,34 @@ footer p{opacity:.75}
     if (e.isIntersecting){ e.target.classList.add("in"); tio.unobserve(e.target); }
   }), {threshold: .35});
   document.querySelectorAll("#timeline li").forEach((li, i) => { li.style.transitionDelay = ""; tio.observe(li); });
+
+  /* E-mail : sur ordinateur, un menu de choix (mailto ne marche pas sans application de messagerie configurée) */
+  const dlg = $("mailmenu"), desktop = matchMedia("(hover:hover) and (pointer:fine)");
+  function openMail(sub){
+    const to = encodeURIComponent(CONTACT.email), su = sub ? encodeURIComponent(sub) : "";
+    $("mm-addr").textContent = CONTACT.email;
+    $("mm-gmail").href = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${su}`;
+    $("mm-outlook").href = `https://outlook.live.com/mail/0/deeplink/compose?to=${to}&subject=${su}`;
+    $("mm-app").href = mailHref + (sub ? "?subject=" + su : "");
+    dlg.showModal();
+  }
+  if (CONTACT.email && dlg.showModal){
+    const mailLinks = [$("mail"), $("d-mail"), ...document.querySelectorAll(".panel a")];
+    mailLinks.forEach(a => a.addEventListener("click", e => {
+      if (!desktop.matches) return;
+      e.preventDefault();
+      const t = a.closest(".topic");
+      openMail(t ? "Demande : " + t.dataset.subject : "");
+    }));
+    $("mm-copy").addEventListener("click", async () => {
+      dlg.close();
+      try { await navigator.clipboard.writeText(CONTACT.email); toast("Adresse copiée"); }
+      catch { toast("Copie impossible : sélectionne l’adresse"); }
+    });
+    dlg.addEventListener("click", e => {
+      if (e.target === dlg || e.target.closest("a, .mm-x")) dlg.close();
+    });
+  }
 
   /* Barre flottante : visible hors du haut de page et hors section contact */
   const seen = {hero: true, contact: false};
