@@ -3,14 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guillaume Avenel – Formateur professionnel d’adultes</title>
-<meta name="description" content="Formateur professionnel d’adultes : formation, bilan de compétences, VAE, premiers secours en santé mentale.">
+<title>Guillaume Avenel – Formateur professionnel d’adultes au Havre</title>
+<meta name="description" content="Formateur professionnel d’adultes au Havre : formation, analyse des pratiques, bilan de compétences, VAE, premiers secours en santé mentale (PSSM Jeune).">
+<meta name="theme-color" content="#3F6B5C">
+<meta property="og:title" content="Guillaume Avenel – Formateur professionnel d’adultes">
+<meta property="og:description" content="Formation, bilan de compétences, VAE, consolidation d’équipe et prévention en santé mentale.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Guillaume Avenel","jobTitle":"Formateur professionnel d’adultes","address":{"@type":"PostalAddress","addressLocality":"Le Havre","addressRegion":"Normandie","addressCountry":"FR"},"sameAs":["https://www.linkedin.com/in/guillaume-avenel-538063204/"],"knowsAbout":["Formation d’adultes","Bilan de compétences","VAE","PNL","Premiers secours en santé mentale","Analyse des pratiques professionnelles"]}</script>
 <style>
 :root{
-  --bg:#EDF1EA;--surface:#F9FAF6;--ink:#20302B;--muted:#566760;--line:rgba(32,48,43,.15);
+  --bg:#EDF1EA;--surface:#F9FAF6;--ink:#20302B;--muted:#4D5E57;--line:rgba(32,48,43,.15);
   --accent:#3F6B5C;--on-accent:#fff;--soft:rgba(63,107,92,.12);--warm:#E8A27C;--bar:rgba(249,250,246,.9);
   --ease:cubic-bezier(.23,1,.32,1);
   --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
@@ -35,14 +41,14 @@ a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 h1,h2,h3{font-family:var(--serif);font-optical-sizing:auto;text-wrap:balance}
+.skip{position:absolute;left:12px;top:-60px;z-index:60;background:var(--accent);color:var(--on-accent);padding:10px 16px;border-radius:999px;font-weight:600;text-decoration:none}
+.skip:focus{top:calc(10px + env(safe-area-inset-top,0px))}
 
-/* Boutons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 24px;border-radius:999px;font:600 1rem var(--sans);text-decoration:none;cursor:pointer;border:1.5px solid var(--line);background:transparent;color:var(--ink);transition:background-color 160ms ease,transform 120ms var(--ease),filter 160ms ease}
 .btn:active{transform:scale(.97)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 @media (hover:hover) and (pointer:fine){.btn:hover{background:var(--soft)}.btn.primary:hover{background:var(--accent);filter:brightness(1.1)}}
 
-/* Hero */
 .hero{padding:28px 0 64px}
 .hero .wrap{display:grid;gap:36px;align-items:center}
 .arch-box{position:relative;width:min(74vw,330px);margin:0 auto}
@@ -51,7 +57,10 @@ h1,h2,h3{font-family:var(--serif);font-optical-sizing:auto;text-wrap:balance}
 .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 h1{font-size:clamp(2.8rem,12vw,5rem);line-height:1;letter-spacing:-.025em;font-weight:600}
 .role{margin-top:14px;font-size:1.2rem;color:var(--muted)}
+.where{margin-top:4px;font-size:.95rem;color:var(--accent);font-weight:600}
 .lead{margin-top:18px;max-width:30em;font-size:1.12rem;text-wrap:pretty}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;list-style:none}
+.chips li{padding:6px 14px;border-radius:999px;background:var(--soft);font-size:.9rem;font-weight:600;color:var(--accent)}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 @media (min-width:820px){
   .hero{padding:56px 0 96px}
@@ -59,82 +68,76 @@ h1{font-size:clamp(2.8rem,12vw,5rem);line-height:1;letter-spacing:-.025em;font-w
   .arch-box{order:2;width:100%;max-width:370px;margin:0 0 0 auto}
 }
 
-/* Mouvement d’ouverture (une seule fois) */
 .js .arch{clip-path:inset(100% 0 0 0);animation:unfold 1s var(--ease) .1s forwards}
 .js .in-a{opacity:0;animation:rise .8s var(--ease) forwards;animation-delay:calc(.45s + var(--d,0) * 90ms)}
 @keyframes unfold{to{clip-path:inset(0 0 0 0)}}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-/* Sections */
 section{padding:56px 0}
 h2{font-size:clamp(1.9rem,6vw,2.7rem);line-height:1.1;letter-spacing:-.018em;font-weight:600;margin-bottom:28px}
 .approach{background:var(--surface);border-block:1px solid var(--line)}
 .approach .wrap{display:grid;gap:32px}
 .approach p.big{font:400 clamp(1.35rem,4.6vw,2rem)/1.35 var(--serif);letter-spacing:-.01em;text-wrap:pretty;max-width:26em}
 .approach p.sub{margin-top:16px;color:var(--muted);max-width:32em}
-.fact{display:flex;gap:18px;align-items:center;padding:20px;border-radius:22px;background:var(--soft)}
-.fact b{font:600 3rem/1 var(--serif);letter-spacing:-.03em;color:var(--accent);flex-shrink:0}
+.facts{display:grid;gap:12px}
+.fact{display:flex;gap:18px;align-items:center;padding:18px 20px;border-radius:22px;background:var(--soft)}
+.fact b{font:600 2.6rem/1 var(--serif);letter-spacing:-.03em;color:var(--accent);flex-shrink:0;min-width:2.4ch}
 .fact span{font-size:.98rem;line-height:1.45}
 @media (min-width:820px){.approach .wrap{grid-template-columns:1.3fr .7fr;gap:64px;align-items:center}}
 
-/* Domaines (accordéon) */
 .topics{border-top:1px solid var(--line);max-width:760px}
 .topic{border-bottom:1px solid var(--line)}
-.topic>button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;font:500 clamp(1.25rem,4.4vw,1.6rem)/1.25 var(--serif)}
-.topic>button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
-.plus{position:relative;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:var(--soft);transition:transform 300ms var(--ease),background-color 200ms}
+.topic>h3>button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;cursor:pointer;font:500 clamp(1.25rem,4.4vw,1.6rem)/1.25 var(--serif)}
+.topic h3{font:inherit}
+.topic>h3>button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+.plus{position:relative;width:34px;height:34px;flex-shrink:0;border-radius:50%;background:var(--soft);transition:transform 300ms var(--ease)}
 .plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.8px;background:var(--accent);transform:translate(-50%,-50%)}
 .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
 .topic.open .plus{transform:rotate(45deg)}
 .panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows 340ms var(--ease)}
 .topic.open .panel{grid-template-rows:1fr}
-.panel>div{overflow:hidden;min-height:0}
+.panel>div{overflow:hidden;min-height:0;visibility:hidden;transition:visibility 340ms}
+.topic.open .panel>div{visibility:visible}
 .panel p{color:var(--muted);max-width:34em;text-wrap:pretty}
 .panel a{display:inline-block;margin:12px 0 22px;font-weight:600;color:var(--accent);text-underline-offset:4px}
 
-/* Parcours */
 .timeline{list-style:none;max-width:760px}
 .timeline li{position:relative;padding:0 0 30px 32px}
 .timeline li:last-child{padding-bottom:0}
 .timeline li::before{content:"";position:absolute;left:0;top:.5em;width:11px;height:11px;border-radius:50%;background:var(--warm);box-shadow:0 0 0 5px var(--soft);transform:scale(.4);transition:transform 450ms var(--ease)}
 .timeline li::after{content:"";position:absolute;left:5px;top:1.5em;bottom:-.5em;width:1.5px;background:var(--line);transform:scaleY(0);transform-origin:top;transition:transform 700ms var(--ease) 150ms}
 .timeline li:last-child::after{display:none}
-.timeline li.in::before{transform:none}.timeline li.in::after{transform:none}
+.timeline li.in::before,.timeline li.in::after{transform:none}
 .t-title{display:block;font:500 1.2rem/1.3 var(--serif)}
 .t-meta{display:block;font-size:.9rem;color:var(--accent);font-weight:600;margin-top:3px}
 .t-desc{margin-top:6px;color:var(--muted);font-size:.97rem;text-wrap:pretty}
 
-/* Certifications */
 .certs{list-style:none;max-width:760px;border-top:1px solid var(--line)}
 .certs li{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
 .certs b{display:block;font-weight:600;line-height:1.35}
 .certs span{display:block;font-size:.92rem;color:var(--muted);margin-top:2px}
 .certs time{flex-shrink:0;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
 
-/* Contact */
 .contact{background:var(--accent);color:var(--on-accent);border-radius:32px 32px 0 0;padding:64px 0 72px}
 .contact h2{margin-bottom:12px}
-.contact .lead{color:inherit;opacity:.9;margin:0 0 30px}
+.contact .lead{color:inherit;opacity:.92;margin:0 0 30px}
 .c-list{display:grid;gap:12px;max-width:520px}
 .c-row{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border-radius:20px;padding:8px 8px 8px 20px}
-.dark-ink .c-row{background:rgba(0,0,0,.12)}
 .c-row a{flex:1;min-width:0;font-weight:600;text-decoration:none;overflow-wrap:anywhere;padding:8px 0}
-.c-row small{display:block;font-size:.8rem;font-weight:500;opacity:.8}
+.c-row small{display:block;font-size:.8rem;font-weight:500;opacity:.85}
 .copy{flex-shrink:0;min-height:44px;padding:8px 16px;border:0;border-radius:999px;font:600 .9rem var(--sans);cursor:pointer;background:var(--on-accent);color:var(--accent);transition:transform 120ms var(--ease)}
 .copy:active{transform:scale(.96)}
 .contact .actions .btn{border-color:var(--on-accent);color:var(--on-accent)}
 .contact .actions .btn.light{background:var(--on-accent);color:var(--accent)}
 @media (hover:hover) and (pointer:fine){.contact .actions .btn:hover{background:rgba(255,255,255,.14)}.contact .actions .btn.light:hover{background:var(--on-accent);filter:brightness(.95)}}
-footer{background:var(--accent);color:var(--on-accent);text-align:center;font-size:.85rem;padding:0 0 calc(96px + env(safe-area-inset-bottom,0px));opacity:1}
-footer p{opacity:.75}
+footer{background:var(--accent);color:var(--on-accent);text-align:center;font-size:.85rem;padding:0 0 calc(96px + env(safe-area-inset-bottom,0px))}
+footer p{opacity:.8}
 
-/* Barre de contact flottante */
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bar);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border-top:1px solid var(--line);transform:translateY(110%);transition:transform 350ms var(--ease)}
-.dock.on{transform:none}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:center;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bar);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border-top:1px solid var(--line);transform:translateY(110%);visibility:hidden;transition:transform 350ms var(--ease),visibility 350ms}
+.dock.on{transform:none;visibility:visible}
 .dock .btn{flex:1;max-width:220px;min-height:46px}
 @media (prefers-reduced-transparency:reduce){.dock{background:var(--surface);-webkit-backdrop-filter:none;backdrop-filter:none}}
 
-/* Menu e-mail (ordinateur) */
 .mailmenu{margin:auto;width:min(92vw,400px);border:1px solid var(--line);border-radius:26px;padding:26px 22px 20px;background:var(--surface);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.25)}
 .mailmenu::backdrop{background:rgba(20,30,26,.5)}
 .mailmenu h3{font-size:1.4rem;font-weight:600}
@@ -143,7 +146,6 @@ footer p{opacity:.75}
 .mm-list .btn{width:100%}
 .mm-x{display:block;margin:14px auto 0;background:none;border:0;font:600 .92rem var(--sans);color:var(--muted);cursor:pointer;padding:8px 14px}
 
-/* Toast */
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:50;max-width:calc(100vw - 32px);padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:.92rem;font-weight:600;opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:opacity 180ms ease-out,transform 180ms ease-out}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
@@ -151,14 +153,16 @@ footer p{opacity:.75}
   html{scroll-behavior:auto}
   .js .arch{clip-path:none;animation:none}
   .js .in-a{opacity:1;animation:none}
-  .timeline li::before{transform:none;transition:none}.timeline li::after{transform:none;transition:none}
-  .panel,.plus,.dock{transition:none}
+  .timeline li::before,.timeline li::after{transform:none;transition:none}
+  .panel,.plus,.dock,.panel>div{transition:none}
   .btn:active,.copy:active{transform:none}
 }
+@media print{.dock,.toast,.actions,.copy{display:none!important}.contact{background:none;color:#000}body{background:#fff}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<a class="skip" href="#contact">Aller au contact</a>
 
 <header class="hero">
   <div class="wrap">
@@ -168,8 +172,12 @@ footer p{opacity:.75}
     <div>
       <h1 class="in-a" style="--d:0">Guillaume<br>Avenel</h1>
       <p class="role in-a" style="--d:1">Formateur professionnel d’adultes</p>
+      <p class="where in-a" style="--d:1">Le Havre · Normandie</p>
       <p class="lead in-a" style="--d:2">J’accompagne personnes et équipes : formation, bilan de compétences, VAE et prévention en santé mentale.</p>
-      <div class="actions in-a" id="hero-cta" style="--d:3">
+      <ul class="chips in-a" style="--d:3" aria-label="Points forts">
+        <li>Écoute active</li><li>Pragmatisme</li><li>Travail sur objectifs</li>
+      </ul>
+      <div class="actions in-a" id="hero-cta" style="--d:4">
         <a class="btn primary" href="#contact">Prendre contact</a>
         <a class="btn" href="https://www.linkedin.com/in/guillaume-avenel-538063204/" target="_blank" rel="noopener">Profil LinkedIn</a>
       </div>
@@ -178,13 +186,16 @@ footer p{opacity:.75}
 </header>
 
 <main>
-  <section class="approach">
+  <section class="approach" aria-label="Mon approche">
     <div class="wrap">
       <div>
-        <p class="big">Analyser les situations problématiques, identifier des solutions adaptées et accompagner leur mise en œuvre.</p>
+        <p class="big">Analyser les situations problématiques, identifier des solutions adaptées et accompagner leur mise en œuvre vers un état ressource.</p>
         <p class="sub">Une approche humaniste, faite de pragmatisme et d’imagination, avec une lecture renouvelée des situations lorsque cela s’avère nécessaire.</p>
       </div>
-      <div class="fact"><b>12 ans</b><span>comme éducateur spécialisé auprès de personnes en situation de handicap intellectuel</span></div>
+      <div class="facts">
+        <div class="fact"><b>12 ans</b><span>comme éducateur spécialisé auprès de personnes en situation de handicap intellectuel</span></div>
+        <div class="fact"><b>PSSM</b><span>formateur certifié Premiers Secours en Santé Mentale – Jeune</span></div>
+      </div>
     </div>
   </section>
 
@@ -193,20 +204,20 @@ footer p{opacity:.75}
       <h2>Comment je peux vous aider</h2>
       <div class="topics" id="topics">
         <div class="topic open" data-subject="Formation">
-          <button type="button" aria-expanded="true"><span>Formation</span><i class="plus" aria-hidden="true"></i></button>
-          <div class="panel"><div><p>Communication, outils de PNL, analyse des pratiques professionnelles, projets professionnels.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
+          <h3><button type="button" aria-expanded="true" aria-controls="p1"><span>Formation</span><i class="plus" aria-hidden="true"></i></button></h3>
+          <div class="panel" id="p1"><div><p>Communication, outils de PNL, analyse des pratiques professionnelles (inter ou intra-entreprise, secteur social et médico-social), projets professionnels.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
         </div>
         <div class="topic" data-subject="Bilan de compétences ou VAE">
-          <button type="button" aria-expanded="false"><span>Bilan de compétences et VAE</span><i class="plus" aria-hidden="true"></i></button>
-          <div class="panel"><div><p>Un accompagnement individuel pour faire le point et valoriser ses acquis.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
+          <h3><button type="button" aria-expanded="false" aria-controls="p2"><span>Bilan de compétences et VAE</span><i class="plus" aria-hidden="true"></i></button></h3>
+          <div class="panel" id="p2"><div><p>Un accompagnement individuel pour faire le point et valoriser ses acquis.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
         </div>
         <div class="topic" data-subject="Consolidation d’équipe">
-          <button type="button" aria-expanded="false"><span>Consolidation d’équipe</span><i class="plus" aria-hidden="true"></i></button>
-          <div class="panel"><div><p>Accompagnement d’équipes, notamment dans le secteur médico-social.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
+          <h3><button type="button" aria-expanded="false" aria-controls="p3"><span>Consolidation d’équipe</span><i class="plus" aria-hidden="true"></i></button></h3>
+          <div class="panel" id="p3"><div><p>Accompagnement d’équipes, notamment dans le secteur médico-social.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
         </div>
         <div class="topic" data-subject="Santé mentale">
-          <button type="button" aria-expanded="false"><span>Santé mentale</span><i class="plus" aria-hidden="true"></i></button>
-          <div class="panel"><div><p>Formateur PSSM Jeune, et animateur d’un point écoute en lycée.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
+          <h3><button type="button" aria-expanded="false" aria-controls="p4"><span>Santé mentale</span><i class="plus" aria-hidden="true"></i></button></h3>
+          <div class="panel" id="p4"><div><p>Formateur PSSM Jeune, et animateur d’un point écoute en lycée pour la prévention auprès des adolescents et jeunes adultes.</p><a href="#contact">Échanger sur ce sujet</a></div></div>
         </div>
       </div>
     </div>
@@ -216,7 +227,7 @@ footer p{opacity:.75}
     <div class="wrap">
       <h2>Mon parcours</h2>
       <ol class="timeline" id="timeline">
-        <li><span class="t-title">Animateur du Point Écoute</span><span class="t-meta">Ensemble scolaire Jeanne d’Arc, Le Havre · depuis oct. 2024</span><p class="t-desc">Prévention en santé mentale auprès des adolescents et jeunes adultes scolarisés.</p></li>
+        <li><span class="t-title">Animateur du Point Écoute</span><span class="t-meta">Lycées et Parc Jeanne d’Arc, Le Havre · depuis oct. 2024</span><p class="t-desc">Prévention en santé mentale auprès des adolescents et jeunes adultes scolarisés.</p></li>
         <li><span class="t-title">Formateur professionnel d’adultes</span><span class="t-meta">Indépendant · depuis mai 2024</span><p class="t-desc">Analyse des pratiques professionnelles en inter ou intra-entreprise (social, médico-social), formation aux outils de communication et de PNL, accompagnement de projets professionnels.</p></li>
         <li><span class="t-title">Analyse des pratiques professionnelles</span><span class="t-meta">IFEN · sept. 2024 – juil. 2025</span><p class="t-desc">Accompagnement d’une équipe de professionnels du champ du handicap dans la réflexion sur leurs prises en charge éducatives.</p></li>
         <li><span class="t-title">Éducateur spécialisé</span><span class="t-meta">Ligue havraise · 2008 – 2020</span><p class="t-desc">Auprès de personnes en situation de handicap intellectuel (IME, MAS, CAJ).</p></li>
@@ -232,7 +243,8 @@ footer p{opacity:.75}
         <li><div><b>Formateur certifié PSSM Jeune</b><span>Premiers Secours en Santé Mentale France</span></div><time>2025</time></li>
         <li><div><b>RS 7680 · Bilan de compétences</b><span>Professionnaliser la pratique du bilan de compétences</span></div><time>2025</time></li>
         <li><div><b>RS 6899 · VAE</b><span>Professionnaliser l’accompagnement en validation des acquis de l’expérience</span></div><time>2025 – 2026</time></li>
-        <li><div><b>Formateur professionnel d’adultes</b><span>Afpa</span></div><time>2023 – 2024</time></li>
+        <li><div><b>Formateur professionnel d’adultes</b><span>Afpa Le Havre</span></div><time>2023 – 2024</time></li>
+        <li><div><b>Management transversal</b><span>Formation continue</span></div><time>2018</time></li>
         <li><div><b>PNL humaniste</b><span>Maître praticien, puis psychopraticien</span></div><time>1999 – 2012</time></li>
       </ul>
     </div>
@@ -243,8 +255,8 @@ footer p{opacity:.75}
       <h2>Parlons de votre projet</h2>
       <p class="lead">Un appel ou un message suffit pour en discuter.</p>
       <div class="c-list">
-        <div class="c-row" id="row-tel" hidden><a id="tel" href="#"><small>Téléphone</small><span></span></a><button class="copy" type="button" data-copy="phone">Copier</button></div>
-        <div class="c-row" id="row-mail" hidden><a id="mail" href="#"><small>E-mail</small><span></span></a><button class="copy" type="button" data-copy="email">Copier</button></div>
+        <div class="c-row" id="row-tel" hidden><a id="tel" href="#"><small>Téléphone</small><span></span></a><button class="copy" type="button" data-copy="phone" aria-label="Copier le numéro de téléphone">Copier</button></div>
+        <div class="c-row" id="row-mail" hidden><a id="mail" href="#"><small>E-mail</small><span></span></a><button class="copy" type="button" data-copy="email" aria-label="Copier l’adresse e-mail">Copier</button></div>
       </div>
       <div class="actions">
         <button class="btn light" id="vcard" type="button" hidden>Enregistrer le contact</button>
@@ -253,7 +265,7 @@ footer p{opacity:.75}
     </div>
   </section>
 </main>
-<footer><p>Guillaume Avenel</p></footer>
+<footer><p>Guillaume Avenel · Formateur professionnel d’adultes · Le Havre</p></footer>
 
 <div class="dock" id="dock" aria-label="Contact rapide">
   <a class="btn primary" id="d-tel" href="#" hidden>Appeler</a>
@@ -277,14 +289,14 @@ footer p{opacity:.75}
     firstName: "Guillaume", lastName: "Avenel", title: "Formateur professionnel d’adultes",
     phone: "+33 6 83 83 75 38",
     email: "guillaumeavenel@orange.fr",
-    photo: "data:image/jpeg;base64,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",
+    /* À REMETTRE : colle ici la ligne photo: "data:image/jpeg;base64,..." de ta version actuelle */
+    photo: "",
     url: "https://www.linkedin.com/in/guillaume-avenel-538063204/"
   };
   const $ = id => document.getElementById(id);
   let tTimer;
   function toast(msg){const el=$("toast");el.textContent=msg;el.classList.add("on");clearTimeout(tTimer);tTimer=setTimeout(()=>el.classList.remove("on"),2200)}
 
-  /* Contact */
   const telHref = "tel:" + CONTACT.phone.replace(/[^\d+]/g, "");
   const mailHref = "mailto:" + CONTACT.email;
   if (CONTACT.phone){
@@ -297,7 +309,6 @@ footer p{opacity:.75}
   }
   if (CONTACT.phone || CONTACT.email) $("vcard").hidden = false;
 
-  /* Photo (initiales si vide) */
   if (CONTACT.photo){
     const img = new Image();
     img.alt = "Portrait de " + CONTACT.firstName + " " + CONTACT.lastName;
@@ -305,13 +316,11 @@ footer p{opacity:.75}
     img.src = CONTACT.photo;
   }
 
-  /* Copier */
   document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", async () => {
     try { await navigator.clipboard.writeText(CONTACT[b.dataset.copy]); toast("Copié"); }
     catch { toast("Copie impossible : sélectionne le texte"); }
   }));
 
-  /* vCard */
   $("vcard").addEventListener("click", () => {
     const esc = s => String(s).replace(/([,;\\])/g, "\\$1");
     const vcf = ["BEGIN:VCARD","VERSION:3.0",
@@ -328,7 +337,6 @@ footer p{opacity:.75}
     toast("Fiche contact téléchargée");
   });
 
-  /* Accordéon : « Échanger sur ce sujet » ouvre un e-mail déjà intitulé */
   document.querySelectorAll(".topic").forEach(t => {
     const btn = t.querySelector("button"), link = t.querySelector(".panel a");
     if (CONTACT.email) link.href = mailHref + "?subject=" + encodeURIComponent("Demande : " + t.dataset.subject);
@@ -338,13 +346,14 @@ footer p{opacity:.75}
     });
   });
 
-  /* Parcours : la ligne se dessine au défilement */
-  const tio = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting){ e.target.classList.add("in"); tio.unobserve(e.target); }
-  }), {threshold: .35});
-  document.querySelectorAll("#timeline li").forEach((li, i) => { li.style.transitionDelay = ""; tio.observe(li); });
+  const lis = document.querySelectorAll("#timeline li");
+  if ("IntersectionObserver" in window){
+    const tio = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add("in"); tio.unobserve(e.target); }
+    }), {threshold: .35});
+    lis.forEach(li => tio.observe(li));
+  } else lis.forEach(li => li.classList.add("in"));
 
-  /* E-mail : sur ordinateur, un menu de choix (mailto ne marche pas sans application de messagerie configurée) */
   const dlg = $("mailmenu"), desktop = matchMedia("(hover:hover) and (pointer:fine)");
   function openMail(sub){
     const to = encodeURIComponent(CONTACT.email), su = sub ? encodeURIComponent(sub) : "";
@@ -372,12 +381,13 @@ footer p{opacity:.75}
     });
   }
 
-  /* Barre flottante : visible hors du haut de page et hors section contact */
   const seen = {hero: true, contact: false};
   const upd = () => $("dock").classList.toggle("on", !seen.hero && !seen.contact);
-  const dio = new IntersectionObserver(es => es.forEach(e => { seen[e.target.dataset.k] = e.isIntersecting; upd(); }));
-  $("hero-cta").dataset.k = "hero"; $("contact").dataset.k = "contact";
-  dio.observe($("hero-cta")); dio.observe($("contact"));
+  if ("IntersectionObserver" in window){
+    const dio = new IntersectionObserver(es => es.forEach(e => { seen[e.target.dataset.k] = e.isIntersecting; upd(); }));
+    $("hero-cta").dataset.k = "hero"; $("contact").dataset.k = "contact";
+    dio.observe($("hero-cta")); dio.observe($("contact"));
+  }
 </script>
 </body>
 </html>
